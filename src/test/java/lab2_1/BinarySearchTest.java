@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 public class BinarySearchTest 
 {
 	@Test
-	public void ElementIsInSequence()
+	public void Test_ElementIsInSequence_ForOneElement()
 	{
 		int[] sequence =  new int[]{5};
 		SearchResult res = BinarySearch.search(5,sequence);
@@ -18,7 +18,7 @@ public class BinarySearchTest
 	}
 	
 	@Test
-	public void ElementNotInSequenceOneElement()
+	public void Test_ElementIsNotInSequence_ForOneElement()
 	{
 		int[] sequence =  new int[]{4};
 		SearchResult res = BinarySearch.search(5,sequence);
@@ -26,7 +26,7 @@ public class BinarySearchTest
 	}
 	
 	@Test
-	public void ElementIsFirstElement()
+	public void Test_ElementIsFirstElement_ForMoreThanOneElement()
 	{
 		int[] sequence =  new int[]{4,5,7,8,9};
 		SearchResult res = BinarySearch.search(4,sequence);
@@ -35,7 +35,7 @@ public class BinarySearchTest
 	}
 	
 	@Test 
-	public void ElementIsLastElement()
+	public void Test_ElementIsLastElement_ForMoreThanOneElement()
 	{
 		int[] sequence =  new int[]{4,5,7,8,9};
 		SearchResult res = BinarySearch.search(9,sequence);
@@ -44,7 +44,7 @@ public class BinarySearchTest
 	}
 	
 	@Test
-	public void ElementIsMiddleElement()
+	public void Test_ElementIsMiddleElement_ForMoreThanOneElement()
 	{
 		int[] sequence =  new int[]{4,5,7,8,9};
 		SearchResult res = BinarySearch.search(7,sequence);
@@ -53,7 +53,7 @@ public class BinarySearchTest
 	}
 	
 	@Test
-	public void ElementNotInSequenceMoreThanOneElement()
+	public void Test_ElementNotInSequence_ForMoreThanOneElement()
 	{
 		int[] sequence =  new int[]{4,5,7,8,9};
 		SearchResult res = BinarySearch.search(3,sequence);
@@ -61,7 +61,7 @@ public class BinarySearchTest
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void ThrowException()
+	public void Test_IfBinarySearchThrowsException()
 	{
 		int[] seq = new int[]{};
 		
