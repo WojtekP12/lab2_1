@@ -67,4 +67,36 @@ public class BinarySearchTest
 		
 		BinarySearch.search(3, seq);
 	}
+	
+	@Test
+	public void Test_IsElementFoundInSequence_WrongSequenceOrder() 
+	{
+		int[] seq = new int[] { 4, 6, 3, 8, 2 };
+		SearchResult result = BinarySearch.search(3, seq);
+		assertThat(result.isFound(), equalTo(true));
+	}
+	
+	@Test
+	public void Test_IsElementMiddleInSequence_MoreThanOneElement_wrongSequenceOrder() 
+	{
+		int[] seq = new int[] { 4, 3, 7, 2, 9 ,1, 10};
+		SearchResult result = BinarySearch.search(2, seq);
+		assertThat(result.isFound(), equalTo(true));
+		if (seq.length % 2 == 0) {
+			assertThat(result.getPosition(), equalTo((int) seq.length / 2));
+		} else {
+			assertThat(result.getPosition(), equalTo((int) seq.length / 2 + 1));
+		}
+	}
+	
+	@Test 
+	public void isEqual() 
+	{
+		int[] seq = new int[] { 4, 6, 3, 8, 2 };
+		int[] other = new int[] {3,5,6,7,8,9};
+		SearchResult result = BinarySearch.search(3, seq);
+		SearchResult otherResult = BinarySearch.search(2,other);
+		
+		assertThat(result.equals(otherResult), equalTo(false));
+	}
 }
